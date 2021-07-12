@@ -2,6 +2,34 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Getting Started
+
+First, clone repository:
+
+```bash
+git clone git@github.com:ramyelashri/coinm.git
+# then
+cd coinm
+```
+
+Install dependencies:
+
+```bash
+npm install
+# or
+yarn
+```
+
+Run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
 ## Available Scripts
 
 In the project directory, you can run:
