@@ -28,9 +28,13 @@
   }
 }
 
-.HomePage__rep-box {
+.HomePage__rep-box,
+.HomePage__dev-box {
   border: 1px solid #262a32;
   padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  color: #b7b7b7;
 }
 
 .HomePage__rep-avatars {
@@ -47,15 +51,14 @@
   height: 15px;
 }
 
-.HomePage__rep-box {
-  display: flex;
-  justify-content: space-between;
-  color: #b7b7b7;
-}
-
 .HomePage__rep-desc {
   font-size: .8rem;
   margin-top: 5px;
+}
+
+.HomePage__dev-second > div {
+  margin-top: 3px;
+  font-size: .8rem;
 }
 
 .HomePage__rep-meta {
@@ -72,4 +75,34 @@
   flex-direction: column;
   justify-content: space-between;
   text-align: right;
+}
+
+.HomePage__dev-box {
+  display: flex;
+  justify-content: space-between;
+  & > * {
+    width: 33.3%;
+  }
+  & > *:last-child {
+    text-align: right;
+  }
+}
+
+.HomePage__dev-rank {
+  margin-right: 10px;
+}
+
+.HomePage__dev-first {
+  display: flex;
+}
+
+.HomePage__dev-username {
+  margin-top: 5px;
+}
+
+.HomePage__dev-avatar {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 15px;
 }

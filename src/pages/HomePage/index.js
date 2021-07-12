@@ -179,25 +179,30 @@ export default function HomePage() {
 
           {developers.length > 0 &&
           developers.map((item, index) => (
-            <div className="HomePage__rep-box" key={index}>
-              <div>
+            <div className="HomePage__dev-box" key={index}>
+              <div className="HomePage__dev-first">
+                <div className="HomePage__dev-rank">{item.rank}</div>
                 <div>
-                  {item.rank}
-                  <Link href="#" target="_blank" color="primary">
+                  <img className="HomePage__dev-avatar" src={item.avatar} />
+                </div>
+                <div>
+                  <Link className="Global__link" href="#" target="_blank" color="primary">
                     {item.name}
                   </Link>
-                  {item.username}
+                  <div className="HomePage__dev-username">
+                    {item.username}
+                  </div>
                 </div>
-                <div>
-                  Popular repo <br/>
-                  <Link href={item.popularRepository.url} target="_blank">
-                    {item.popularRepository.repositoryName}
-                  </Link>
-                  <p>{item.popularRepository.description}</p>
                 </div>
+              <div className="HomePage__dev-second">
+                POPULAR REPO <br/>
+                <Link className="Global__bold" href={item.popularRepository.url} target="_blank">
+                  {item.popularRepository.repositoryName}
+                </Link>
+                <div>{item.popularRepository.description}</div>
               </div>
               <div>
-                <Button onClick={preventDefault} variant="contained" color="black">
+                <Button onClick={preventDefault} className="Global__button-black" variant="contained" color="black">
                   Follow
                 </Button>
               </div>
