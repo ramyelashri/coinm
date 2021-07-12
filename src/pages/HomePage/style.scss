@@ -8,7 +8,7 @@
 
 .HomePage__container {
   background: #0e1117;
-  margin: 40px 20px 20px;
+  margin: 40px 40px 20px;
   border-radius: 8px;
 }
 
@@ -17,11 +17,9 @@
   border: 1px solid #262a32;
   border-radius: 4px 4px 0 0;
   padding: 20px;
-  @include breakpoints('sm') {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .HomePage__select-container {
