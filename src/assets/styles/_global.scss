@@ -1,0 +1,25 @@
+@import "assets/styles/breakpoints";
+
+.Global__meta {
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.Global__bold {
+  font-weight: bold;
+}
+
+.Global__main-container {
+  background-color: #f3f3f3;
+}
+
+.Global__button-black {
+  background-color: #191919 !important;
+  color: white !important;
+  border: 1px solid #343434 !important;
+}
+
+.Global__link {
+  font-size: 1.4rem;
+}
