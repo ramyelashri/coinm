@@ -3,6 +3,11 @@ import Button from '@material-ui/core/Button';
 import ButtonGroup from '@material-ui/core/ButtonGroup';
 import useGithubStore from '../../store/githubStore';
 import Link from '@material-ui/core/Link';
+import Tooltip from '@material-ui/core/Tooltip';
+import TurnedInIcon from '@material-ui/icons/TurnedIn';
+import StarOutlineIcon from '@material-ui/icons/StarOutline';
+import DeviceHubIcon from '@material-ui/icons/DeviceHub';
+import WhatshotIcon from '@material-ui/icons/Whatshot';
 import './style.scss';
 
 export default function HomePage() {
@@ -94,21 +99,24 @@ export default function HomePage() {
           repositories.map((item, index) => (
             <div className="HomePage__rep-box" key={index}>
               <div>
+                <TurnedInIcon className="Global__icon-fix" />
                 <Link className="Global__link" href={item.url} target="_blank" color="primary">
                   {item.username} / {item.repositoryName}
                 </Link>
                 <div className="HomePage__rep-desc">{item.description}</div>
                 <div className="HomePage__rep-meta">
                   <div>{item.language ? item.language : 'NA'}</div>
-                  <div>{item.totalStars}</div>
-                  <div>{item.forks}</div>
+                  <div><StarOutlineIcon className="Global__icon-fix" /> {item.totalStars}</div>
+                  <div><DeviceHubIcon className="Global__icon-fix" /> {item.forks}</div>
                   <div className="HomePage__rep-avatars">
                     Build by &nbsp;
                     {item.builtBy.map((item, index) => (
                       <div key={index}>
-                        <Link href={item.url} target="_blank">
-                          <img className="HomePage__rep-avatar" src={item.avatar} />
-                        </Link>
+                        <Tooltip title={item.username}>
+                          <Link href={item.url} target="_blank">
+                            <img className="HomePage__rep-avatar" src={item.avatar} />
+                          </Link>
+                        </Tooltip>
                       </div>
                     ))}
                   </div>
@@ -116,10 +124,12 @@ export default function HomePage() {
               </div>
               <div className="HomePage__rep-right">
                 <div>
-                  <Button className="Global__button-black" variant="contained" color="secondary">Star</Button>
+                  <Button size="medium" className="Global__button-black" variant="contained" color="secondary">
+                    <StarOutlineIcon fontSize="small" /> Star
+                  </Button>
                 </div>
                 <div>
-                  {item.starsSince} stars today
+                  <StarOutlineIcon className="Global__icon-fix" /> {item.starsSince} stars today
                 </div>
               </div>
             </div>
@@ -195,14 +205,15 @@ export default function HomePage() {
                 </div>
                 </div>
               <div className="HomePage__dev-second">
-                POPULAR REPO <br/>
+                <WhatshotIcon className="Global__icon-fix HomePage__dev-fire" /> POPULAR REPO <br/>
+                <TurnedInIcon className="Global__icon-fix" />&nbsp;
                 <Link className="Global__bold" href={item.popularRepository.url} target="_blank">
                   {item.popularRepository.repositoryName}
                 </Link>
                 <div>{item.popularRepository.description}</div>
               </div>
               <div>
-                <Button onClick={preventDefault} className="Global__button-black" variant="contained" color="black">
+                <Button size="medium" onClick={preventDefault} className="Global__button-black" variant="contained" color="black">
                   Follow
                 </Button>
               </div>
